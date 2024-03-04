@@ -6,7 +6,7 @@ from vllm import LLM, SamplingParams
 from tqdm import tqdm
 import json
 import time
-os.environ['VLLM_USE_MODELSCOPE'] = "True" #dont set this environment variable if you use the local path or huggingface repo. this variable is only set for modelscope.
+#os.environ['VLLM_USE_MODELSCOPE'] = "True" #dont set this environment variable if you use the local path or huggingface repo. this variable is only set for modelscope.
 batch_size = 16 
 OUT_DIR_ZH = "eval_result/zh_qwen_few_shot.jsonl" # the path that saves the response from model
 OUT_DIR_EN = "eval_result/en_qwen_few_shot.jsonl"
@@ -71,6 +71,6 @@ def eval_results():
     
 
 if __name__ == "__main__":
-    #run_model()
-    #time.sleep(2) # just in case 
+    run_model()
+    time.sleep(2) # just in case 
     eval_results()
